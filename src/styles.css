@@ -5,13 +5,17 @@ html {
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
-    background-color: beige;
+    background-color: #DAD2CA;
+    border-radius: .3em;
+    transition: .3s ease-out;
   }
 ul li{
     padding-top: 10px;
 }
 .active{
-    background-color: slateblue;
+    background-color: #8FD4C1;
+    border-radius: .3em;
+    transition: .3s ease-out;
     color: black;
     transition: 1s;
 }
