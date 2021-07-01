@@ -24,6 +24,7 @@ export default {
   },
   created: function() {
   	this.getAnectodts();
+    hello()
   },
   methods: {
     getAnectodts : function(){
