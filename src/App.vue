@@ -1,15 +1,18 @@
 <template>
-  <h1>Click to get anectodotes </h1>
+  <h1>Anectodotes </h1>
     <h2> <input placeholder='поиск' @input="search" v-model="searchLine"> </h2>
-      <ol>
+      <ul>
         <li 
         v-for="sel in selected"
-        :key = sel.text >
-          <p v-bind:class = '{ active: sel.isActive }'>
+        :key = sel.text
+        v-bind:class = '{ active: sel.isActive }'
+        class = 'anectdote' >
+          <p>
           {{ sel.text }}
-          <button v-on:click ='sel.isActive = !sel.isActive'>like</button></p>
+          </p>
+          <button v-on:click ='sel.isActive = !sel.isActive'>like</button>
         </li>
-      </ol>
+      </ul>
 </template>
 
 <script>
@@ -24,7 +27,6 @@ export default {
   },
   created: function() {
   	this.getAnectodts();
-    hello()
   },
   methods: {
     getAnectodts : function(){
@@ -53,7 +55,6 @@ export default {
             for(var i = 0; i < data.length; i++) {
               this.anectodes.push({
                 text: data[i].joke ? data[i].joke : data[i].setup + '\n' + data[i].delivery ,
-                id: data[i].id,
                 isActive : false
               })
             }
